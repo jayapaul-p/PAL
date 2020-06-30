@@ -1,6 +1,6 @@
 ---
 applications:
-- name: pal-tracker
+- name: pal-tracker-jp-production
   path: src/PalTracker/bin/Release/netcoreapp3.1/publish/
   routes:
   - route: https://pal-tracker-jp-production.cfapps.io/
