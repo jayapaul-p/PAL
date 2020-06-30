@@ -11,6 +11,29 @@ set target space
 	cf target -s DOTNET
 
 
+deploy to cf
+
+	cf push pal-tracker -p src/PalTracker/bin/Release/netcoreapp3.1/publish
+
+
+set env
+
+	cf set-env pal-tracker WELCOME_MESSAGE "Hello from Cloud Foundry"
+
+
+restart app
+
+	cf restart pal-tracker
+
+
+delete app
+
+	cf delete pal-tracker-gamma
+
 submit assignment
 
-	.\gradlew cloudNativeDeveloperSimpleApp -PserverUrl=https://[app-url]
+	.\gradlew cloudNativeDeveloperCloudFoundry -PserverUrl=http://pal-tracker-gamma-restless-hartebeest.cfapps.io
+
+http://pal-tracker-gamma-restless-hartebeest.cfapps.io/env
+
+ 
