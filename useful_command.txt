@@ -30,12 +30,37 @@ delete app
 
 	cf delete pal-tracker-gamma
 
+Useful curl commands
+
+Get
+	curl -kLi localhost:5000/time-entries
+Post
+	curl -kLi -X POST -H "Content-Type: application/json" localhost:5000/time-entries -d "{\"projectId\": 1, \"userId\": 2, \"date\": \"2019-01-01\", \"hours\": 8}"
+Get
+	curl -kLi localhost:5000/time-entries/${TIME_ENTRY_ID}
+Put
+	curl -kLi -X PUT -H "Content-Type: application/json" localhost:5000/time-entries/${TIME_ENTRY_ID} -d "{\"projectId\": 88, \"userId\": 99, \"date\": \"2019-01-01\", \"hours\": 8}"
+Delete
+	curl -kLi -X DELETE -H "Content-Type: application/json" localhost:5000/time-entries/${TIME_ENTRY_ID}
+	
+
+
+Useful git commands
+
+	git cherry-pick mvc-start
+	git log --graph --decorate --oneline --all
+
+
+
 submit assignment
 
 	.\gradlew cloudNativeDeveloperCloudFoundry -PserverUrl=http://pal-tracker-gamma-restless-hartebeest.cfapps.io
 
 http://pal-tracker-gamma-restless-hartebeest.cfapps.io/env
 
+
+
+gradlew cloudNativeDeveloperRest -PserverUrl=https://pal-tracker-jp-production.cfapps.io/
 
 
  
