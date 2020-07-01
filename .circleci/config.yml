@@ -57,6 +57,11 @@ jobs:
             cd $EXTRACT_DEST
             curl https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.1.1/flyway-commandline-5.1.1-linux-x64.tar.gz | tar xvz
 
+      - run:
+          name: Unzip artifacts
+          command: |
+            mkdir -p $EXTRACT_DEST
+            tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
 
       - run:
           name: Deploy
@@ -70,11 +75,6 @@ jobs:
             bash ./migrate-databases.sh pal-tracker-jp-review . tracker-database
 
       
-      - run:
-          name: Unzip artifacts
-          command: |
-            mkdir -p $EXTRACT_DEST
-            tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
 
 
   deployToProd:
