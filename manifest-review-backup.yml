@@ -1,8 +1,0 @@
----
-applications:
-- name: pal-tracker-jp-review
-  path: src/PalTracker/bin/Release/netcoreapp3.1/publish/
-  routes:
-  - route: https://pal-tracker-jp-review.cfapps.io/
-  env:
-    WELCOME_MESSAGE: Hello from the review environment
