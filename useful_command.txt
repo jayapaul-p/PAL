@@ -60,7 +60,7 @@ http://pal-tracker-gamma-restless-hartebeest.cfapps.io/env
 
 
 
-gradlew cloudNativeDeveloperRest -PserverUrl=https://pal-tracker-jp-production.cfapps.io/
+gradlew cloudNativeDeveloperDatabaseAccess -PserverUrl=https://pal-tracker-jp-production.cfapps.io/
 
 
  
